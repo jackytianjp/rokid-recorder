@@ -1,0 +1,22 @@
+# Build output
+build/
+.gradle/
+/app/build/
+/app/release/
+
+# Local config (contains absolute SDK path)
+local.properties
+
+# Signing key — 不公开
+keystore/
+*.jks
+*.keystore
+
+# IDE
+.idea/
+*.iml
+.DS_Store
+
+# 开发过程产物
+captures/
+.kotlin/
