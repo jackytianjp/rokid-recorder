@@ -15,7 +15,7 @@
     <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
 
     <application
-        android:label="会议记录键"
+        android:label="录音机"
         android:icon="@mipmap/ic_launcher"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:theme="@style/Theme.MeetingKey">
@@ -24,7 +24,7 @@
         <activity
             android:name=".MainActivity"
             android:exported="true"
-            android:label="会议记录键"
+            android:label="录音机"
             android:screenOrientation="portrait"
             android:theme="@style/Theme.MeetingKey">
             <intent-filter>
@@ -37,7 +37,7 @@
         <activity
             android:name=".ToggleActivity"
             android:exported="true"
-            android:label="会议记录"
+            android:label="录音"
             android:excludeFromRecents="true"
             android:noHistory="true"
             android:taskAffinity=""

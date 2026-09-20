@@ -198,8 +198,8 @@ class MeetingKeyService : Service() {
         MeetingState.lastError.value = null
         MeetingState.recording.value = true
         MeetingState.elapsedMs.value = 0L
-        MeetingState.log("会议记录 · 开始")
-        startInForeground("会议记录中 " + MeetingState.elapsedText())
+        MeetingState.log("录音 · 开始")
+        startInForeground("录音中 " + MeetingState.elapsedText())
         startTimer()
         startWatchdog()
     }
@@ -209,7 +209,7 @@ class MeetingKeyService : Service() {
         timerJob = scope.launch {
             while (MeetingState.recording.value) {
                 MeetingState.elapsedMs.value = System.currentTimeMillis() - startedAt
-                notifyText("会议记录中 " + MeetingState.elapsedText())
+                notifyText("录音中 " + MeetingState.elapsedText())
                 delay(500)
             }
         }
@@ -307,7 +307,7 @@ class MeetingKeyService : Service() {
     private fun createChannel() {
         val nm = getSystemService(NotificationManager::class.java)
         if (nm.getNotificationChannel(CHANNEL_ID) == null) {
-            val ch = NotificationChannel(CHANNEL_ID, "会议记录键", NotificationManager.IMPORTANCE_MIN)
+            val ch = NotificationChannel(CHANNEL_ID, "录音机", NotificationManager.IMPORTANCE_MIN)
             ch.setShowBadge(false)
             nm.createNotificationChannel(ch)
         }
@@ -316,7 +316,7 @@ class MeetingKeyService : Service() {
     private fun buildNotification(text: String): Notification =
         NotificationCompat.Builder(this, CHANNEL_ID)
             .setSmallIcon(android.R.drawable.ic_btn_speak_now)
-            .setContentTitle("会议记录键")
+            .setContentTitle("录音机")
             .setContentText(text)
             .setOngoing(true)
             .setPriority(NotificationCompat.PRIORITY_MIN)

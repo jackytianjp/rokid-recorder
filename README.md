@@ -1,6 +1,6 @@
-# Rokid 会议记录键 (MeetingKey)
+# Rokid 录音机 (Recorder)
 
-在 Rokid Glasses 上**按一下镜腿键就开始录 Rokid 原生会议记录**，不用再掏手机开 App。
+在 Rokid Glasses 上**按一下镜腿键就开始录音**，不用再掏手机开 App。
 
 界面只占屏幕最下方两行，不遮挡视线：
 
@@ -23,7 +23,7 @@
 /sdcard/Recordings/record-YYYYMMDD-HHMMSS-xx.wav
 ```
 
-PCM 16bit / 16kHz / 单声道 —— 与**手机 App 触发会议记录完全同一规格**，
+PCM 16bit / 16kHz / 单声道 —— 与**手机 App 触发录音完全同一规格**，
 手机 Rokid App 里的转写、导出照常可用。
 
 ## 安装
@@ -43,7 +43,7 @@ APK 见本仓库 **Releases** 页面。
 
 ## 原理
 
-Rokid Glasses 上，系统功能（会议记录、拍照、AI 等）**不走广播、也不走普通 Activity**，
+Rokid Glasses 上，系统功能（录音、拍照、AI 等）**不走广播、也不走普通 Activity**，
 而是 `assistserver` 的 binder 场景命令。核心就一行：
 
 ```kotlin
